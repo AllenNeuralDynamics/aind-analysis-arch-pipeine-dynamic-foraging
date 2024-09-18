@@ -1,0 +1,57 @@
+{
+	"edges": [
+		{
+			"id": "reactflow__edge-capsule_han_debug_aind_analysis_arch_job_manager_1-capsule_han_debug_aind_analysis_arch_dynamic_foraging_2",
+			"selected": false,
+			"source": "capsule_han_debug_aind_analysis_arch_job_manager_1",
+			"target": "capsule_han_debug_aind_analysis_arch_dynamic_foraging_2"
+		},
+		{
+			"id": "reactflow__edge-capsule_han_debug_aind_analysis_arch_dynamic_foraging_2-results",
+			"selected": false,
+			"source": "capsule_han_debug_aind_analysis_arch_dynamic_foraging_2",
+			"target": "results"
+		}
+	],
+	"nodes": [
+		{
+			"data": {
+				"capsule_id": "3d8bc0cf-15dc-49bd-bc5e-91d2d59c0a27"
+			},
+			"id": "capsule_han_debug_aind_analysis_arch_job_manager_1",
+			"position": {
+				"x": 410.8011474609376,
+				"y": 193.9469706217448
+			},
+			"selected": true,
+			"type": "capsule"
+		},
+		{
+			"id": "results",
+			"position": {
+				"x": 464.8011474609375,
+				"y": 785.9469706217448
+			},
+			"selected": false,
+			"type": "results"
+		},
+		{
+			"data": {
+				"capsule_id": "42889a43-860e-43a7-9f72-aea79ae2f4bf"
+			},
+			"id": "capsule_han_debug_aind_analysis_arch_dynamic_foraging_2",
+			"position": {
+				"x": 409.46781412760424,
+				"y": 475.280303955078
+			},
+			"selected": false,
+			"type": "capsule"
+		}
+	],
+	"timestamp": 1726702768157,
+	"viewport": {
+		"x": 75,
+		"y": -115,
+		"zoom": 0.75
+	}
+}

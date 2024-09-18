@@ -1,0 +1,47 @@
+{
+	"version": 1,
+	"processes": [
+		{
+			"name": "capsule_han_debug_aind_analysis_arch_job_manager_1",
+			"capsule": {
+				"id": "3d8bc0cf-15dc-49bd-bc5e-91d2d59c0a27",
+				"name": "han_debug_aind-analysis-arch-job-manager",
+				"slug": "0951403",
+				"commit": "eb14233baa2ceee0081e278206a5faf425ac6f6c"
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			}
+		},
+		{
+			"name": "capsule_han_debug_aind_analysis_arch_dynamic_foraging_2",
+			"capsule": {
+				"id": "42889a43-860e-43a7-9f72-aea79ae2f4bf",
+				"name": "han_debug_aind-analysis-arch-dynamic-foraging",
+				"slug": "3394271",
+				"commit": "23305d88c7ad7429f22932e4f07a0840d831c923",
+				"arguments": [
+					"--parallel_on_jobs",
+					"1"
+				],
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 32,
+				"memory": 16
+			},
+			"inputs": [
+				{
+					"id": "Wz6fhjF0Bs0swvJl",
+					"source_id": "capsule_han_debug_aind_analysis_arch_job_manager_1",
+					"type": "capsule",
+					"name": "han_debug_aind-analysis-arch-job-manager"
+				}
+			],
+			"results": {
+				"id": "42889a43-860e-43a7-9f72-aea79ae2f4bf"
+			}
+		}
+	]
+}
