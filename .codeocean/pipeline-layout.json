@@ -17,6 +17,12 @@
 			"selected": false,
 			"source": "capsule_han_debug_aind_analysis_arch_job_manager_1",
 			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-f908dd4d-d7ed-4d52-97cf-ccd0e167c659-capsule_han_debug_aind_analysis_arch_job_manager_1",
+			"selected": false,
+			"source": "f908dd4d-d7ed-4d52-97cf-ccd0e167c659",
+			"target": "capsule_han_debug_aind_analysis_arch_job_manager_1"
 		}
 	],
 	"nodes": [
@@ -29,7 +35,7 @@
 				"x": 306.75016117190864,
 				"y": 196.68515447145614
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -50,14 +56,23 @@
 				"x": 158.23470846442171,
 				"y": 456.87678020478194
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"id": "f908dd4d-d7ed-4d52-97cf-ccd0e167c659",
+			"position": {
+				"x": 345.44179650350594,
+				"y": 15.309567874509867
+			},
+			"selected": false,
+			"type": "dataset"
 		}
 	],
-	"timestamp": 1726723764367,
+	"timestamp": 1726731139670,
 	"viewport": {
-		"x": 169.05487576827272,
-		"y": -240.25999084924763,
-		"zoom": 1.0217589460032956
+		"x": 211.90216309535236,
+		"y": 44.2760386302416,
+		"zoom": 0.6362509625535874
 	}
 }

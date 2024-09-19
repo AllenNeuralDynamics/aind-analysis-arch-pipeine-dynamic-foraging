@@ -1,9 +1,12 @@
 #!/usr/bin/env nextflow
-// hash:sha256:6da796314e8ae81aa80211a4d87bd1e0d3e38ec11d510514f1aab4417a064d81
+// hash:sha256:14b3e5b88731d6e3cfd6fffc7a2059fa3b7354de7818979bd1536d0610210000
 
 nextflow.enable.dsl = 1
 
-capsule_han_debug_aind_analysis_arch_job_manager_1_to_capsule_han_debug_aind_analysis_arch_dynamic_foraging_2_1 = channel.create()
+params.foraging_nwb_bonsai_url = 's3://aind-behavior-data/foraging_nwb_bonsai'
+
+foraging_nwb_bonsai_to_han_debug_aind_analysis_arch_job_manager_1 = channel.fromPath(params.foraging_nwb_bonsai_url + "/", type: 'any')
+capsule_han_debug_aind_analysis_arch_job_manager_1_to_capsule_han_debug_aind_analysis_arch_dynamic_foraging_2_2 = channel.create()
 
 // capsule - han_debug_aind-analysis-arch-job-manager
 process capsule_han_debug_aind_analysis_arch_job_manager_1 {
@@ -15,9 +18,12 @@ process capsule_han_debug_aind_analysis_arch_job_manager_1 {
 
 	publishDir "$RESULTS_PATH/assigned_jobs", saveAs: { filename -> new File(filename).getName() }
 
+	input:
+	path 'capsule/data/foraging_nwb_bonsai' from foraging_nwb_bonsai_to_han_debug_aind_analysis_arch_job_manager_1.collect()
+
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_han_debug_aind_analysis_arch_job_manager_1_to_capsule_han_debug_aind_analysis_arch_dynamic_foraging_2_1
+	path 'capsule/results/*' into capsule_han_debug_aind_analysis_arch_job_manager_1_to_capsule_han_debug_aind_analysis_arch_dynamic_foraging_2_2
 
 	script:
 	"""
@@ -35,7 +41,7 @@ process capsule_han_debug_aind_analysis_arch_job_manager_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0951403.git" capsule-repo
-	git -C capsule-repo checkout 27c1c9ad6260d4c1d7ee1effd315d925b92f57a9 --quiet
+	git -C capsule-repo checkout e6a57c88b520b13ae39a8a023f50919c59fffd99 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -59,7 +65,7 @@ process capsule_han_debug_aind_analysis_arch_dynamic_foraging_2 {
 	publishDir "$RESULTS_PATH/$index", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/jobs' from capsule_han_debug_aind_analysis_arch_job_manager_1_to_capsule_han_debug_aind_analysis_arch_dynamic_foraging_2_1.flatten()
+	path 'capsule/data/jobs' from capsule_han_debug_aind_analysis_arch_job_manager_1_to_capsule_han_debug_aind_analysis_arch_dynamic_foraging_2_2.flatten()
 	val index from 1..100000
 
 	output:
@@ -81,14 +87,14 @@ process capsule_han_debug_aind_analysis_arch_dynamic_foraging_2 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3394271.git" capsule-repo
-	git -C capsule-repo checkout 95e3a7ec7745a1ab24b99539dfe24c1293313d9a --quiet
+	git -C capsule-repo checkout f5309a3d4ee30e8c260d53e5b5ce968eb38102ce --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run
+	./run ${params.capsule_han_debug_aind_analysis_arch_dynamic_foraging_2_args}
 
 	echo "[${task.tag}] completed!"
 	"""
