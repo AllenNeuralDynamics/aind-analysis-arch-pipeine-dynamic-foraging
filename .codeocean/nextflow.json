@@ -37,7 +37,7 @@
 				"id": "42889a43-860e-43a7-9f72-aea79ae2f4bf",
 				"name": "han_debug_aind-analysis-arch-dynamic-foraging",
 				"slug": "3394271",
-				"commit": "85e9600018c386bbd4fda21330b4681d9aa94bcb",
+				"commit": "f531083c1f3f145fb0f19aa2e5e0acdd3c731824",
 				"image_tag": "7161f7a5d27480b775308c644088f7d4",
 				"app_panel": true
 			},
