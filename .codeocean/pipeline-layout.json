@@ -35,7 +35,7 @@
 				"x": 306.75016117190864,
 				"y": 196.68515447145614
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -53,10 +53,10 @@
 			},
 			"id": "capsule_han_debug_aind_analysis_arch_dynamic_foraging_2",
 			"position": {
-				"x": 158.23470846442171,
-				"y": 456.87678020478194
+				"x": 117.37033020768911,
+				"y": 486.73921046931736
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -69,10 +69,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1726731139670,
+	"timestamp": 1726779510487,
 	"viewport": {
-		"x": 211.90216309535236,
-		"y": 44.2760386302416,
+		"x": 352.9021630953523,
+		"y": 57.2760386302416,
 		"zoom": 0.6362509625535874
 	}
 }
