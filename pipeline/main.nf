@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:a2da93ed21cab6b201b04b17093bf4d147d72c402bc258a512c75b5884e1b229
+// hash:sha256:6da796314e8ae81aa80211a4d87bd1e0d3e38ec11d510514f1aab4417a064d81
 
 nextflow.enable.dsl = 1
 
@@ -35,7 +35,7 @@ process capsule_han_debug_aind_analysis_arch_job_manager_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0951403.git" capsule-repo
-	git -C capsule-repo checkout 2fc268278a5a2047c9bb6a77d98b4c595b658dce --quiet
+	git -C capsule-repo checkout 27c1c9ad6260d4c1d7ee1effd315d925b92f57a9 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -56,10 +56,11 @@ process capsule_han_debug_aind_analysis_arch_dynamic_foraging_2 {
 	cpus 8
 	memory '16 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH/$index", saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/jobs' from capsule_han_debug_aind_analysis_arch_job_manager_1_to_capsule_han_debug_aind_analysis_arch_dynamic_foraging_2_1.flatten()
+	val index from 1..100000
 
 	output:
 	path 'capsule/results/*'
@@ -80,7 +81,7 @@ process capsule_han_debug_aind_analysis_arch_dynamic_foraging_2 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3394271.git" capsule-repo
-	git -C capsule-repo checkout d61bbe42a99ba623f01b9f1b81a9c38c66a7e9ec --quiet
+	git -C capsule-repo checkout 95e3a7ec7745a1ab24b99539dfe24c1293313d9a --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 

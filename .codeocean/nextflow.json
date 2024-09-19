@@ -7,7 +7,7 @@
 				"id": "3d8bc0cf-15dc-49bd-bc5e-91d2d59c0a27",
 				"name": "han_debug_aind-analysis-arch-job-manager",
 				"slug": "0951403",
-				"commit": "2fc268278a5a2047c9bb6a77d98b4c595b658dce",
+				"commit": "27c1c9ad6260d4c1d7ee1effd315d925b92f57a9",
 				"image_tag": "89106f7107e98e91487940ff623a07a5",
 				"app_panel": true
 			},
@@ -26,7 +26,7 @@
 				"id": "42889a43-860e-43a7-9f72-aea79ae2f4bf",
 				"name": "han_debug_aind-analysis-arch-dynamic-foraging",
 				"slug": "3394271",
-				"commit": "d61bbe42a99ba623f01b9f1b81a9c38c66a7e9ec",
+				"commit": "95e3a7ec7745a1ab24b99539dfe24c1293313d9a",
 				"image_tag": "7161f7a5d27480b775308c644088f7d4"
 			},
 			"resources": {
@@ -44,7 +44,8 @@
 				}
 			],
 			"results": {
-				"id": "42889a43-860e-43a7-9f72-aea79ae2f4bf"
+				"id": "42889a43-860e-43a7-9f72-aea79ae2f4bf",
+				"sequence_folders": true
 			}
 		}
 	]
