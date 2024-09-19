@@ -7,7 +7,7 @@
 				"id": "3d8bc0cf-15dc-49bd-bc5e-91d2d59c0a27",
 				"name": "han_debug_aind-analysis-arch-job-manager",
 				"slug": "0951403",
-				"commit": "e6a57c88b520b13ae39a8a023f50919c59fffd99",
+				"commit": "526345577ae19139b738d0c656862102ac35e689",
 				"image_tag": "89106f7107e98e91487940ff623a07a5",
 				"app_panel": true
 			},
@@ -37,7 +37,7 @@
 				"id": "42889a43-860e-43a7-9f72-aea79ae2f4bf",
 				"name": "han_debug_aind-analysis-arch-dynamic-foraging",
 				"slug": "3394271",
-				"commit": "cbccfa5164c081d8ed280c228189329c395a11f7",
+				"commit": "85e9600018c386bbd4fda21330b4681d9aa94bcb",
 				"image_tag": "7161f7a5d27480b775308c644088f7d4",
 				"app_panel": true
 			},
