@@ -7,11 +7,17 @@
 				"id": "3d8bc0cf-15dc-49bd-bc5e-91d2d59c0a27",
 				"name": "han_debug_aind-analysis-arch-job-manager",
 				"slug": "0951403",
-				"commit": "eb14233baa2ceee0081e278206a5faf425ac6f6c"
+				"commit": "2fc268278a5a2047c9bb6a77d98b4c595b658dce",
+				"image_tag": "89106f7107e98e91487940ff623a07a5",
+				"app_panel": true
 			},
 			"resources": {
 				"cpus": 1,
 				"memory": 8
+			},
+			"results": {
+				"id": "3d8bc0cf-15dc-49bd-bc5e-91d2d59c0a27",
+				"target_path": "assigned_jobs"
 			}
 		},
 		{
@@ -20,15 +26,11 @@
 				"id": "42889a43-860e-43a7-9f72-aea79ae2f4bf",
 				"name": "han_debug_aind-analysis-arch-dynamic-foraging",
 				"slug": "3394271",
-				"commit": "23305d88c7ad7429f22932e4f07a0840d831c923",
-				"arguments": [
-					"--parallel_on_jobs",
-					"1"
-				],
-				"app_panel": true
+				"commit": "d61bbe42a99ba623f01b9f1b81a9c38c66a7e9ec",
+				"image_tag": "7161f7a5d27480b775308c644088f7d4"
 			},
 			"resources": {
-				"cpus": 32,
+				"cpus": 8,
 				"memory": 16
 			},
 			"inputs": [
@@ -36,7 +38,9 @@
 					"id": "Wz6fhjF0Bs0swvJl",
 					"source_id": "capsule_han_debug_aind_analysis_arch_job_manager_1",
 					"type": "capsule",
-					"name": "han_debug_aind-analysis-arch-job-manager"
+					"name": "han_debug_aind-analysis-arch-job-manager",
+					"target_path": "jobs",
+					"flatten": true
 				}
 			],
 			"results": {

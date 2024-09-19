@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:94c3b1fe967c12d57a2bed6783154279283a33a79d15d3d3d7000da3ab842fce
+// hash:sha256:a2da93ed21cab6b201b04b17093bf4d147d72c402bc258a512c75b5884e1b229
 
 nextflow.enable.dsl = 1
 
@@ -8,12 +8,15 @@ capsule_han_debug_aind_analysis_arch_job_manager_1_to_capsule_han_debug_aind_ana
 // capsule - han_debug_aind-analysis-arch-job-manager
 process capsule_han_debug_aind_analysis_arch_job_manager_1 {
 	tag 'capsule-0951403'
-	container "$REGISTRY_HOST/capsule/3d8bc0cf-15dc-49bd-bc5e-91d2d59c0a27"
+	container "$REGISTRY_HOST/capsule/3d8bc0cf-15dc-49bd-bc5e-91d2d59c0a27:89106f7107e98e91487940ff623a07a5"
 
 	cpus 1
 	memory '8 GB'
 
+	publishDir "$RESULTS_PATH/assigned_jobs", saveAs: { filename -> new File(filename).getName() }
+
 	output:
+	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_han_debug_aind_analysis_arch_job_manager_1_to_capsule_han_debug_aind_analysis_arch_dynamic_foraging_2_1
 
 	script:
@@ -32,14 +35,14 @@ process capsule_han_debug_aind_analysis_arch_job_manager_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0951403.git" capsule-repo
-	git -C capsule-repo checkout eb14233baa2ceee0081e278206a5faf425ac6f6c --quiet
+	git -C capsule-repo checkout 2fc268278a5a2047c9bb6a77d98b4c595b658dce --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run
+	./run ${params.capsule_han_debug_aind_analysis_arch_job_manager_1_args}
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -48,15 +51,15 @@ process capsule_han_debug_aind_analysis_arch_job_manager_1 {
 // capsule - han_debug_aind-analysis-arch-dynamic-foraging
 process capsule_han_debug_aind_analysis_arch_dynamic_foraging_2 {
 	tag 'capsule-3394271'
-	container "$REGISTRY_HOST/capsule/42889a43-860e-43a7-9f72-aea79ae2f4bf"
+	container "$REGISTRY_HOST/capsule/42889a43-860e-43a7-9f72-aea79ae2f4bf:7161f7a5d27480b775308c644088f7d4"
 
-	cpus 32
+	cpus 8
 	memory '16 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_han_debug_aind_analysis_arch_job_manager_1_to_capsule_han_debug_aind_analysis_arch_dynamic_foraging_2_1
+	path 'capsule/data/jobs' from capsule_han_debug_aind_analysis_arch_job_manager_1_to_capsule_han_debug_aind_analysis_arch_dynamic_foraging_2_1.flatten()
 
 	output:
 	path 'capsule/results/*'
@@ -67,7 +70,7 @@ process capsule_han_debug_aind_analysis_arch_dynamic_foraging_2 {
 	set -e
 
 	export CO_CAPSULE_ID=42889a43-860e-43a7-9f72-aea79ae2f4bf
-	export CO_CPUS=32
+	export CO_CPUS=8
 	export CO_MEMORY=17179869184
 
 	mkdir -p capsule
@@ -77,14 +80,14 @@ process capsule_han_debug_aind_analysis_arch_dynamic_foraging_2 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3394271.git" capsule-repo
-	git -C capsule-repo checkout 23305d88c7ad7429f22932e4f07a0840d831c923 --quiet
+	git -C capsule-repo checkout d61bbe42a99ba623f01b9f1b81a9c38c66a7e9ec --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run --parallel_on_jobs 1
+	./run
 
 	echo "[${task.tag}] completed!"
 	"""

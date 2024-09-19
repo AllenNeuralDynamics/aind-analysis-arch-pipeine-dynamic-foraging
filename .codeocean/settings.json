@@ -5,10 +5,6 @@
 	"role": {
 		"role_arn": "arn:aws:iam::467914378000:role/aind-codeocean-user"
 	},
-	"nextflow_error_strategy": {
-		"error_strategy": "retry",
-		"max_retries": 10,
-		"max_errors": 10
-	},
+	"spot": true,
 	"verbose_logs": true
 }
