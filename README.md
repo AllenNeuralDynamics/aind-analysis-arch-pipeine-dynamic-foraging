@@ -45,9 +45,21 @@ See [this documentation](https://alleninstitute.sharepoint.com/:w:/s/NeuralDynam
 2. Upload results to docDB and s3 bucket based on the return dict of each computation job ([code](https://github.com/AllenNeuralDynamics/aind-analysis-arch-job-wrapper-dynamic-foraging/blob/92837a31a4f1f16d8e20c336b8da356466a0f940/code/run_capsule.py#L125))
 3. Update job `status` in the `job_manager` ([code](https://github.com/AllenNeuralDynamics/aind-analysis-arch-job-wrapper-dynamic-foraging/blob/92837a31a4f1f16d8e20c336b8da356466a0f940/code/run_capsule.py#L130-L140)).
 
-   Here are some example `status`: "pending", "running", "success", "skipped", "failed"
+## Example jobs
+- In collection `behavior_analysis/job_manager`
+- `status` of a job could be "pending", "running", "success", "skipped", "failed", etc.
+- A pending job
+  
+    ![image](https://github.com/user-attachments/assets/74c5147f-d6b5-4061-8ec6-bf1c13410d98)
+- A success job
+  
+    ![image](https://github.com/user-attachments/assets/623f0efb-6f5f-4bf3-a82e-63b149c935d6)
 
-## Example result
+     - `docDB_id`: the `_id` of the result record in the `collection_name`
+     - `s3_location`: the path to the s3 folder where binary results are stored
+     - `log`: the full log of during the analysis
+
+## Example results
 - In collection `behavior_analysis/mle_fitting`
 <img src="https://github.com/user-attachments/assets/c893d6ba-a59d-4b7e-ab59-5d023cbb5906" width=500>
 
@@ -67,6 +79,15 @@ See [this documentation](https://alleninstitute.sharepoint.com/:w:/s/NeuralDynam
 Currently all binary outputs of the jobs (such as figures and pkl files) are stored at `s3://aind-scratch-data/aind-dynamic-foraging-analysis/{job_hash}`. For example:
 
 <img src="https://github.com/user-attachments/assets/6b2a2cf8-e74c-47d0-af90-dc0a59203d2e" width=800>
+
+## Parameters of the pipeline
+
+<img src="https://github.com/user-attachments/assets/0b38a51e-0386-46da-8be7-98843b0d101c" width=600>
+
+## How to add more first-order analyses?
+1. Add your analysis wrapper [here](https://github.com/AllenNeuralDynamics/aind-analysis-arch-job-wrapper-dynamic-foraging/tree/main/code/analysis_wrappers), in a similar format as `mle_fitting.py`
+2. Register your analysis to the `ANALYSIS_MAPPER` [here](https://github.com/AllenNeuralDynamics/aind-analysis-arch-job-wrapper-dynamic-foraging/blob/92837a31a4f1f16d8e20c336b8da356466a0f940/code/run_capsule.py#L32).
+3. Add your analysis specifications to `analysis_specs` [here](https://github.com/AllenNeuralDynamics/aind-analysis-arch-job-manager/blob/d87bbb1e38bc01c474ee65e6478c952a0bb84fbd/code/run_capsule.py#L36).
 
 ## See also
 1. [RL model fitting pipeline](https://github.com/AllenNeuralDynamics/aind-dynamic-foraging-models/issues/33)
