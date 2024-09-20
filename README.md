@@ -1,6 +1,6 @@
 # AIND Analaysis Architecture for Dynamic Foraging
 
-A version 2.0 pipeline for dynamic foraging analysis. (compared to Han's v1.0 pipeline)
+A version 2.0 pipeline for dynamic foraging analysis. (compared to [Han's v1.0 pipeline](https://github.com/AllenNeuralDynamics/aind-foraging-behavior-bonsai-trigger-pipeline))
 
 See [this documentation](https://alleninstitute.sharepoint.com/:w:/s/NeuralDynamics/EU0Nq3tPleRInc2dS6ZLj7IBOIUWv71FZLNAcw_DqHqWlw?e=Mb5k9B).
 
