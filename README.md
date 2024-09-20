@@ -89,6 +89,9 @@ Currently all binary outputs of the jobs (such as figures and pkl files) are sto
 2. Register your analysis to the `ANALYSIS_MAPPER` [here](https://github.com/AllenNeuralDynamics/aind-analysis-arch-job-wrapper-dynamic-foraging/blob/92837a31a4f1f16d8e20c336b8da356466a0f940/code/run_capsule.py#L32).
 3. Add your analysis specifications to `analysis_specs` [here](https://github.com/AllenNeuralDynamics/aind-analysis-arch-job-manager/blob/d87bbb1e38bc01c474ee65e6478c952a0bb84fbd/code/run_capsule.py#L36).
 
+## Streamlit dashboard to monitor all job status
+Coming...
+
 ## See also
 1. [RL model fitting pipeline](https://github.com/AllenNeuralDynamics/aind-dynamic-foraging-models/issues/33)
 2. [Dynamic foraging analysis pipeline V2](https://github.com/AllenNeuralDynamics/aind-foraging-behavior-bonsai-trigger-pipeline/issues/4)
