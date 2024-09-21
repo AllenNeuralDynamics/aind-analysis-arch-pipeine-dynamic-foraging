@@ -64,16 +64,81 @@ See [this documentation](https://alleninstitute.sharepoint.com/:w:/s/NeuralDynam
 <img src="https://github.com/user-attachments/assets/c893d6ba-a59d-4b7e-ab59-5d023cbb5906" width=500>
 
 ## How to retrieve results from docDB?
-1. By REST API (recommended. See [doc here for details](https://aind-data-access-api.readthedocs.io/en/latest/UserGuide.html#document-database-docdb))
-2. By URL
-    - For example, you can get the example result above by [this URL](https://api.allenneuraldynamics-test.org/v1/behavior_analysis/mle_fitting?filter={%22job_hash%22:%2282279ae3d4333ea9ac8507efbdc14833bc003a82a3d60fc9843c7619572657de%22}):
+See [doc here for details](https://aind-data-access-api.readthedocs.io/en/latest/UserGuide.html#document-database-docdb)
+1. By REST API (recommended)
+   
+    Let's get all fitted models for session 720956_2024-07-17_13-02-47.
+    ```python
+    import json
+    import requests
+    import numpy as np
+    
+    URL = "https://api.allenneuraldynamics-test.org/v1/behavior_analysis/mle_fitting"
+    filter = {
+        "nwb_name": "720956_2024-07-17_13-02-47.nwb",  # Session id,
+        }
+    projection = {
+        "analysis_results.fit_settings.agent_alias": 1,
+        "_id": 0,
+    }
+    response = requests.get(URL, params={"filter": json.dumps(filter), "projection": json.dumps(projection)})
+    fitted_models = [item["analysis_results"]["fit_settings"]["agent_alias"] for item in response.json()]
+    fitted_models
+    ```
+    output (see [here](https://foraging-behavior-browser.allenneuraldynamics-test.org/RL_model_playground#all-available-foragers) for what `agent_alias` means)
+    ```bash
+    ['WSLS',
+     'QLearning_L1F1_CK1_softmax',
+     'QLearning_L2F0_CK1_epsi',
+     'QLearning_L2F1_CKfull_softmax',
+     'LossCounting']
+    ```
+    
+    and retrieve the results of Bari2019 model for this session
+    ```python
+    filter = {
+        "nwb_name": "720956_2024-07-17_13-02-47.nwb",  # Session id,
+        "analysis_results.fit_settings.agent_alias": "QLearning_L1F1_CK1_softmax",  # Bari2019 model
+    }
+    projection = {
+        "analysis_results.params": 1,
+        "analysis_results.fitted_latent_variables": 1,
+        "_id": 0,
+    }
+    response = requests.get(URL, params={"filter": json.dumps(filter), "projection": json.dumps(projection)})
+    record_dict = response.json()[0]
+    
+    # Fitted parameters
+    params = record_dict["analysis_results"]["params"]
+    
+    # Fitted latent variables
+    fitted_latent = record_dict["analysis_results"]["fitted_latent_variables"]
+    
+    print(params)
+    print(fitted_latent.keys())
+    print(np.array(fitted_latent["q_value"]).shape)
+    ```
+   output
+   ```bash
+   {'learn_rate': 0.2507656379736507, 'forget_rate_unchosen': 0.2983798859486771, 'choice_kernel_relative_weight': 0.11071091482286803, 'biasL': 1.1123296294263654, 'softmax_inverse_temperature': 4.6676500177210904, 'choice_kernel_step_size': 1}
+   dict_keys(['q_value', 'choice_kernel', 'choice_prob'])
+   (2, 437)
+   ```
+3. By `aind-data-access-api` (see [doc here for details](https://aind-data-access-api.readthedocs.io/en/latest/UserGuide.html#document-database-docdb))
+4. By URL
+    - For example, get the example result above by [this URL](https://api.allenneuraldynamics-test.org/v1/behavior_analysis/mle_fitting?filter={%22job_hash%22:%2282279ae3d4333ea9ac8507efbdc14833bc003a82a3d60fc9843c7619572657de%22}):
       ```
       https://api.allenneuraldynamics-test.org/v1/behavior_analysis/mle_fitting?filter={"job_hash":"82279ae3d4333ea9ac8507efbdc14833bc003a82a3d60fc9843c7619572657de"}
       ```
-    - Or you can check how many models have been fit for the session "722683_2024-06-27" by [this URL](https://api.allenneuraldynamics-test.org/v1/behavior_analysis/mle_fitting?filter={%22nwb_name%22:{%22$regex%22:%22722683_2024-06-27%22}}&projection={%22job_hash%22:%201,%20%22analysis_results.fit_settings.agent_alias%22:%201,%20%22_id%22:%200})
+    - Check how many models have been fit for the session "722683_2024-06-27" by [this URL](https://api.allenneuraldynamics-test.org/v1/behavior_analysis/mle_fitting?filter={%22nwb_name%22:%20%22720956_2024-07-17_13-02-47.nwb%22}&projection={%22job_hash%22:%201,%20%22analysis_results.fit_settings.agent_alias%22:%201,%20%22_id%22:%200})
       ```
-      https://api.allenneuraldynamics-test.org/v1/behavior_analysis/mle_fitting?filter={"nwb_name":{"$regex":"722683_2024-06-27"}}&projection={"job_hash": 1, "analysis_results.fit_settings.agent_alias": 1, "_id": 0}
+      https://api.allenneuraldynamics-test.org/v1/behavior_analysis/mle_fitting?filter={"nwb_name": "720956_2024-07-17_13-02-47.nwb"}&projection={"job_hash": 1, "analysis_results.fit_settings.agent_alias": 1, "_id": 0}
       ```
+    - Get fitted parameter and latent variables of a certain fitting (this [URL](https://api.allenneuraldynamics-test.org/v1/behavior_analysis/mle_fitting?filter={%22nwb_name%22:%20%22720956_2024-07-17_13-02-47.nwb%22,%20%22analysis_results.fit_settings.agent_alias%22:%20%22QLearning_L2F1_CKfull_softmax%22}&projection={%22analysis_results.params%22:%201,%20%22analysis_results.fitted_latent_variables%22:%201,%20%22_id%22:%200}))
+      ```
+      https://api.allenneuraldynamics-test.org/v1/behavior_analysis/mle_fitting?filter={"nwb_name": "720956_2024-07-17_13-02-47.nwb", "analysis_results.fit_settings.agent_alias": "QLearning_L2F1_CKfull_softmax"}&projection={"analysis_results.params": 1, "analysis_results.fitted_latent_variables": 1, "_id": 0}
+      ```      
+      
 ## How to retrieve results from S3?
 
 Currently all binary outputs of the jobs (such as figures and pkl files) are stored at `s3://aind-scratch-data/aind-dynamic-foraging-analysis/{job_hash}`. For example:
