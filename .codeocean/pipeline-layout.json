@@ -13,12 +13,6 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_han_debug_aind_analysis_arch_job_manager_1-results",
-			"selected": false,
-			"source": "capsule_han_debug_aind_analysis_arch_job_manager_1",
-			"target": "results"
-		},
-		{
 			"id": "reactflow__edge-f908dd4d-d7ed-4d52-97cf-ccd0e167c659-capsule_han_debug_aind_analysis_arch_job_manager_1",
 			"selected": false,
 			"source": "f908dd4d-d7ed-4d52-97cf-ccd0e167c659",
@@ -32,17 +26,17 @@
 			},
 			"id": "capsule_han_debug_aind_analysis_arch_job_manager_1",
 			"position": {
-				"x": 306.75016117190864,
-				"y": 196.68515447145614
+				"x": 309.99645978442766,
+				"y": 177.20736279634065
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
 			"id": "results",
 			"position": {
-				"x": 522.2336742670441,
-				"y": 769.5162912189842
+				"x": 355.58246059978137,
+				"y": 639.1532981252614
 			},
 			"selected": false,
 			"type": "results"
@@ -53,10 +47,10 @@
 			},
 			"id": "capsule_han_debug_aind_analysis_arch_dynamic_foraging_2",
 			"position": {
-				"x": 115.79862335166104,
-				"y": 488.31091732534543
+				"x": 309.2144930978943,
+				"y": 411.60109664153003
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -69,10 +63,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1726782762321,
+	"timestamp": 1726966380353,
 	"viewport": {
-		"x": 352.9021630953523,
-		"y": 57.2760386302416,
-		"zoom": 0.6362509625535874
+		"x": 214.0780258831233,
+		"y": 205.3367159664918,
+		"zoom": 0.6160862689239549
 	}
 }

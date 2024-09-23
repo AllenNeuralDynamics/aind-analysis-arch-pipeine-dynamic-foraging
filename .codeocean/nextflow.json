@@ -7,7 +7,7 @@
 				"id": "3d8bc0cf-15dc-49bd-bc5e-91d2d59c0a27",
 				"name": "han_debug_aind-analysis-arch-job-manager",
 				"slug": "0951403",
-				"commit": "526345577ae19139b738d0c656862102ac35e689",
+				"commit": "e38b912aab724b3b3050ca21d39253b3e55ab52b",
 				"image_tag": "89106f7107e98e91487940ff623a07a5",
 				"app_panel": true
 			},
@@ -25,25 +25,21 @@
 					"target_path": "foraging_nwb_bonsai/",
 					"collect": true
 				}
-			],
-			"results": {
-				"id": "3d8bc0cf-15dc-49bd-bc5e-91d2d59c0a27",
-				"target_path": "assigned_jobs"
-			}
+			]
 		},
 		{
 			"name": "capsule_han_debug_aind_analysis_arch_dynamic_foraging_2",
 			"capsule": {
 				"id": "42889a43-860e-43a7-9f72-aea79ae2f4bf",
-				"name": "han_debug_aind-analysis-arch-dynamic-foraging",
+				"name": "han_debug_aind-analysis-arch-job-wrapper-dynamic-foraging",
 				"slug": "3394271",
-				"commit": "f531083c1f3f145fb0f19aa2e5e0acdd3c731824",
+				"commit": "28e63432a20549fd3d0aed14efe62329ba628842",
 				"image_tag": "7161f7a5d27480b775308c644088f7d4",
 				"app_panel": true
 			},
 			"resources": {
-				"cpus": 8,
-				"memory": 16
+				"cpus": 1,
+				"memory": 8
 			},
 			"inputs": [
 				{
