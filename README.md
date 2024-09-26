@@ -6,6 +6,9 @@ See [this documentation](https://alleninstitute.sharepoint.com/:w:/s/NeuralDynam
 
 <img src="https://github.com/user-attachments/assets/e102a925-47ff-40d8-872a-4735fb9d72a3" width=400>
 
+<br>
+<img src="https://github.com/user-attachments/assets/60a04e27-9192-452e-9159-212bb2ed4cef" width=1000>
+
 ## Components
 ### [aind-analysis-arch-job-manager](https://github.com/AllenNeuralDynamics/aind-analysis-arch-job-manager) (defines and assigns jobs)
 1. Generates job jsons like this ([code](https://github.com/AllenNeuralDynamics/aind-analysis-arch-job-manager/blob/d87bbb1e38bc01c474ee65e6478c952a0bb84fbd/code/run_capsule.py#L67-L74))
