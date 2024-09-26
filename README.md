@@ -36,7 +36,7 @@ See [this documentation](https://alleninstitute.sharepoint.com/:w:/s/NeuralDynam
   "job_hash": "82279ae3d4333ea9ac8507efbdc14833bc003a82a3d60fc9843c7619572657de"
 },
 ```
-  where `job_hash` is the unique identifier of $Job = Analysis_{ver}(session)$ (see details [here](https://github.com/AllenNeuralDynamics/aind-dynamic-foraging-models/issues/33#issue-2503995854))
+  where `job_hash` is the unique identifier of $Job = Analysis_{ver, args}(session)$ (see details [here](https://github.com/AllenNeuralDynamics/aind-dynamic-foraging-models/issues/33#issue-2503995854))
 
 2. Insert jobs to `behavior_analysis/job_manager` on docDB ([code](https://github.com/AllenNeuralDynamics/aind-analysis-arch-job-manager/blob/d87bbb1e38bc01c474ee65e6478c952a0bb84fbd/code/run_capsule.py#L130)).
 3. Assign `pending` jobs to parallel workers in CO pipeline ([code](https://github.com/AllenNeuralDynamics/aind-analysis-arch-job-manager/blob/d87bbb1e38bc01c474ee65e6478c952a0bb84fbd/code/run_capsule.py#L135-L143))
