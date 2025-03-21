@@ -1,24 +1,24 @@
 #!/usr/bin/env nextflow
-// hash:sha256:307b4833b79b05b5ed386e51dda3fcf0de8ea9c9b94f59e359f6f1b3fffbba28
+// hash:sha256:e2d0fed0a38e11bb15feb0bbb50459f1c3a8ce858c322e02112d7b04e2474c21
 
 nextflow.enable.dsl = 1
 
 params.foraging_nwb_bonsai_url = 's3://aind-behavior-data/foraging_nwb_bonsai'
 
-foraging_nwb_bonsai_to_han_debug_aind_analysis_arch_job_manager_v2_1 = channel.fromPath(params.foraging_nwb_bonsai_url + "/", type: 'any')
+foraging_nwb_bonsai_to_han_prod_aind_analysis_arch_job_manager_1 = channel.fromPath(params.foraging_nwb_bonsai_url + "/", type: 'any')
 capsule_han_debug_aind_analysis_arch_job_manager_v_2_1_to_capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2_2 = channel.create()
 capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2_to_capsule_han_debug_aind_analysis_arch_upload_db_s_3_v_2_3_3 = channel.create()
 
-// capsule - han_debug_aind-analysis-arch-job-manager-v2
+// capsule - han_prod_aind-analysis-arch-job-manager
 process capsule_han_debug_aind_analysis_arch_job_manager_v_2_1 {
-	tag 'capsule-7174758'
-	container "$REGISTRY_HOST/capsule/ee18ab31-9a75-4a2a-9647-5a89b5ea24d4:89106f7107e98e91487940ff623a07a5"
+	tag 'capsule-1554778'
+	container "$REGISTRY_HOST/published/da058235-42bc-42f9-81e9-ed4e965f660d:v2"
 
 	cpus 1
 	memory '8 GB'
 
 	input:
-	path 'capsule/data/foraging_nwb_bonsai' from foraging_nwb_bonsai_to_han_debug_aind_analysis_arch_job_manager_v2_1.collect()
+	path 'capsule/data/foraging_nwb_bonsai' from foraging_nwb_bonsai_to_han_prod_aind_analysis_arch_job_manager_1.collect()
 
 	output:
 	path 'capsule/results/*' into capsule_han_debug_aind_analysis_arch_job_manager_v_2_1_to_capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2_2
@@ -28,7 +28,7 @@ process capsule_han_debug_aind_analysis_arch_job_manager_v_2_1 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=ee18ab31-9a75-4a2a-9647-5a89b5ea24d4
+	export CO_CAPSULE_ID=da058235-42bc-42f9-81e9-ed4e965f660d
 	export CO_CPUS=1
 	export CO_MEMORY=8589934592
 
@@ -38,8 +38,7 @@ process capsule_han_debug_aind_analysis_arch_job_manager_v_2_1 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7174758.git" capsule-repo
-	git -C capsule-repo checkout 1f191f47043ce41ff4a45d6801ac11d435f3cd12 --quiet
+	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1554778.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -52,10 +51,10 @@ process capsule_han_debug_aind_analysis_arch_job_manager_v_2_1 {
 	"""
 }
 
-// capsule - han_debug_aind-analysis-arch-job-wrapper-dynamic-foraging-v2
+// capsule - han_debug_aind-analysis-arch-job-wrapper-dynamic-foraging
 process capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2 {
-	tag 'capsule-7135734'
-	container "$REGISTRY_HOST/capsule/451da157-6f12-4d8e-970f-75a836b046fc:7161f7a5d27480b775308c644088f7d4"
+	tag 'capsule-7098858'
+	container "$REGISTRY_HOST/published/8385aa1a-d8da-4870-b952-e33733990f23:v1"
 
 	cpus 1
 	memory '8 GB'
@@ -75,7 +74,7 @@ process capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2 
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=451da157-6f12-4d8e-970f-75a836b046fc
+	export CO_CAPSULE_ID=8385aa1a-d8da-4870-b952-e33733990f23
 	export CO_CPUS=1
 	export CO_MEMORY=8589934592
 
@@ -85,8 +84,7 @@ process capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2 
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7135734.git" capsule-repo
-	git -C capsule-repo checkout 319a85106649d3317df1654d6ca3a9221e3f6f90 --quiet
+	git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7098858.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -99,10 +97,10 @@ process capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2 
 	"""
 }
 
-// capsule - han_debug_aind-analysis-arch-upload-db-s3-v2
+// capsule - han_debug_aind-analysis-arch-upload-db-s3
 process capsule_han_debug_aind_analysis_arch_upload_db_s_3_v_2_3 {
-	tag 'capsule-6611699'
-	container "$REGISTRY_HOST/capsule/25a3c40a-7947-402d-899b-0cc2c8f88f6c:cde317e728dcd01a472d8e3bea6488d6"
+	tag 'capsule-9391875'
+	container "$REGISTRY_HOST/published/d1004134-9823-4e3a-bba7-2b22ac32e42c:v1"
 
 	cpus 1
 	memory '8 GB'
@@ -121,7 +119,7 @@ process capsule_han_debug_aind_analysis_arch_upload_db_s_3_v_2_3 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=25a3c40a-7947-402d-899b-0cc2c8f88f6c
+	export CO_CAPSULE_ID=d1004134-9823-4e3a-bba7-2b22ac32e42c
 	export CO_CPUS=1
 	export CO_MEMORY=8589934592
 
@@ -131,8 +129,7 @@ process capsule_han_debug_aind_analysis_arch_upload_db_s_3_v_2_3 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6611699.git" capsule-repo
-	git -C capsule-repo checkout 8590d927b04c7d014af3a1089018fba6642ffa5f --quiet
+	git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9391875.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 

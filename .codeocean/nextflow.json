@@ -4,11 +4,10 @@
 		{
 			"name": "capsule_han_debug_aind_analysis_arch_job_manager_v_2_1",
 			"capsule": {
-				"id": "ee18ab31-9a75-4a2a-9647-5a89b5ea24d4",
-				"name": "han_debug_aind-analysis-arch-job-manager-v2",
-				"slug": "7174758",
-				"commit": "1f191f47043ce41ff4a45d6801ac11d435f3cd12",
-				"image_tag": "89106f7107e98e91487940ff623a07a5",
+				"id": "da058235-42bc-42f9-81e9-ed4e965f660d",
+				"name": "han_prod_aind-analysis-arch-job-manager",
+				"slug": "1554778",
+				"version": 2,
 				"app_panel": true
 			},
 			"resources": {
@@ -30,11 +29,10 @@
 		{
 			"name": "capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2",
 			"capsule": {
-				"id": "451da157-6f12-4d8e-970f-75a836b046fc",
-				"name": "han_debug_aind-analysis-arch-job-wrapper-dynamic-foraging-v2",
-				"slug": "7135734",
-				"commit": "319a85106649d3317df1654d6ca3a9221e3f6f90",
-				"image_tag": "7161f7a5d27480b775308c644088f7d4",
+				"id": "8385aa1a-d8da-4870-b952-e33733990f23",
+				"name": "han_debug_aind-analysis-arch-job-wrapper-dynamic-foraging",
+				"slug": "7098858",
+				"version": 1,
 				"app_panel": true
 			},
 			"resources": {
@@ -59,11 +57,10 @@
 		{
 			"name": "capsule_han_debug_aind_analysis_arch_upload_db_s_3_v_2_3",
 			"capsule": {
-				"id": "25a3c40a-7947-402d-899b-0cc2c8f88f6c",
-				"name": "han_debug_aind-analysis-arch-upload-db-s3-v2",
-				"slug": "6611699",
-				"commit": "8590d927b04c7d014af3a1089018fba6642ffa5f",
-				"image_tag": "cde317e728dcd01a472d8e3bea6488d6"
+				"id": "d1004134-9823-4e3a-bba7-2b22ac32e42c",
+				"name": "han_debug_aind-analysis-arch-upload-db-s3",
+				"slug": "9391875",
+				"version": 1
 			},
 			"resources": {
 				"cpus": 1,

@@ -34,7 +34,7 @@
 				"x": 470.6415202466345,
 				"y": 964.839613260659
 			},
-			"selected": true,
+			"selected": false,
 			"type": "results"
 		},
 		{
@@ -60,7 +60,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "ee18ab31-9a75-4a2a-9647-5a89b5ea24d4"
+				"capsule_id": "da058235-42bc-42f9-81e9-ed4e965f660d"
 			},
 			"id": "capsule_han_debug_aind_analysis_arch_job_manager_v_2_1",
 			"position": {
@@ -72,21 +72,21 @@
 		},
 		{
 			"data": {
-				"capsule_id": "451da157-6f12-4d8e-970f-75a836b046fc"
+				"capsule_id": "8385aa1a-d8da-4870-b952-e33733990f23"
 			},
 			"id": "capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2",
 			"position": {
 				"x": 552.3374388971483,
 				"y": 491.2305232554104
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1742585741005,
+	"timestamp": 1742586747337,
 	"viewport": {
-		"x": 152.5930610185767,
-		"y": -116.94817985654288,
+		"x": 90.59306101857669,
+		"y": 88.05182014345712,
 		"zoom": 0.6637453629278863
 	}
 }
