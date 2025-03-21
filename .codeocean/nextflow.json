@@ -7,7 +7,7 @@
 				"id": "ee18ab31-9a75-4a2a-9647-5a89b5ea24d4",
 				"name": "han_debug_aind-analysis-arch-job-manager-v2",
 				"slug": "7174758",
-				"commit": "ef41a316f170caab0ace8791dc356e7ea5669441",
+				"commit": "1f191f47043ce41ff4a45d6801ac11d435f3cd12",
 				"image_tag": "89106f7107e98e91487940ff623a07a5",
 				"app_panel": true
 			},
@@ -33,7 +33,7 @@
 				"id": "451da157-6f12-4d8e-970f-75a836b046fc",
 				"name": "han_debug_aind-analysis-arch-job-wrapper-dynamic-foraging-v2",
 				"slug": "7135734",
-				"commit": "734af943e1eb0851c290c81a6d0e5bd8e7dc0dfc",
+				"commit": "319a85106649d3317df1654d6ca3a9221e3f6f90",
 				"image_tag": "7161f7a5d27480b775308c644088f7d4",
 				"app_panel": true
 			},
@@ -62,7 +62,7 @@
 				"id": "25a3c40a-7947-402d-899b-0cc2c8f88f6c",
 				"name": "han_debug_aind-analysis-arch-upload-db-s3-v2",
 				"slug": "6611699",
-				"commit": "5034f7f611eaec9748737971b720cb297794bc75",
+				"commit": "8590d927b04c7d014af3a1089018fba6642ffa5f",
 				"image_tag": "cde317e728dcd01a472d8e3bea6488d6"
 			},
 			"resources": {

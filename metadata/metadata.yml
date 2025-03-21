@@ -1,4 +1,8 @@
 metadata_version: 1
 name: Han_pipeline_foraging_behavior_bonsai_V2.0
+description: |-
+  A prototype AIND analysis pipeline for dynamic foraging MLE model fitting.
+
+  See this doc https://alleninstitute.sharepoint.com/:w:/s/NeuralDynamics/EVhzUEKcgUVBuZKJLqdWakYBE-Xmc0e4y0q0aZdARt3_Kg?e=veOhHD
 authors:
 - name: hanhou

@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:9a4d212a75f74ce7aee4556316abb822bf829f20dca399b57dd1f963f19f24e1
+// hash:sha256:307b4833b79b05b5ed386e51dda3fcf0de8ea9c9b94f59e359f6f1b3fffbba28
 
 nextflow.enable.dsl = 1
 
@@ -39,7 +39,7 @@ process capsule_han_debug_aind_analysis_arch_job_manager_v_2_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7174758.git" capsule-repo
-	git -C capsule-repo checkout ef41a316f170caab0ace8791dc356e7ea5669441 --quiet
+	git -C capsule-repo checkout 1f191f47043ce41ff4a45d6801ac11d435f3cd12 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -86,7 +86,7 @@ process capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2 
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7135734.git" capsule-repo
-	git -C capsule-repo checkout 734af943e1eb0851c290c81a6d0e5bd8e7dc0dfc --quiet
+	git -C capsule-repo checkout 319a85106649d3317df1654d6ca3a9221e3f6f90 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -132,7 +132,7 @@ process capsule_han_debug_aind_analysis_arch_upload_db_s_3_v_2_3 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6611699.git" capsule-repo
-	git -C capsule-repo checkout 5034f7f611eaec9748737971b720cb297794bc75 --quiet
+	git -C capsule-repo checkout 8590d927b04c7d014af3a1089018fba6642ffa5f --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 

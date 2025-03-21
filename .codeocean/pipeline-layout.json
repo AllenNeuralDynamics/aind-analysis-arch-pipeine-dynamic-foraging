@@ -31,8 +31,8 @@
 		{
 			"id": "results",
 			"position": {
-				"x": 544.1574686879147,
-				"y": 1102.5866091920761
+				"x": 470.6415202466345,
+				"y": 964.839613260659
 			},
 			"selected": true,
 			"type": "results"
@@ -52,8 +52,8 @@
 			},
 			"id": "capsule_han_debug_aind_analysis_arch_upload_db_s_3_v_2_3",
 			"position": {
-				"x": 674.8189453041429,
-				"y": 813.5506591146493
+				"x": 661.1619648072029,
+				"y": 768.2476136974057
 			},
 			"selected": false,
 			"type": "capsule"
@@ -64,8 +64,8 @@
 			},
 			"id": "capsule_han_debug_aind_analysis_arch_job_manager_v_2_1",
 			"position": {
-				"x": 554.1529601718358,
-				"y": 247.83740760874315
+				"x": 552.4600656543497,
+				"y": 217.3653062939921
 			},
 			"selected": false,
 			"type": "capsule"
@@ -76,17 +76,17 @@
 			},
 			"id": "capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2",
 			"position": {
-				"x": 361.04035842121107,
-				"y": 553.8676204023985
+				"x": 552.3374388971483,
+				"y": 491.2305232554104
 			},
 			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1742537529138,
+	"timestamp": 1742585741005,
 	"viewport": {
-		"x": -158.97250539712002,
-		"y": -469.04817433340395,
-		"zoom": 0.5907042581040017
+		"x": 152.5930610185767,
+		"y": -116.94817985654288,
+		"zoom": 0.6637453629278863
 	}
 }
