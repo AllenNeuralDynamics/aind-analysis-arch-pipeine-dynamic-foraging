@@ -48,7 +48,7 @@
 		},
 		{
 			"data": {
-				"capsule_id": "25a3c40a-7947-402d-899b-0cc2c8f88f6c"
+				"capsule_id": "d1004134-9823-4e3a-bba7-2b22ac32e42c"
 			},
 			"id": "capsule_han_debug_aind_analysis_arch_upload_db_s_3_v_2_3",
 			"position": {
@@ -83,7 +83,7 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1742586747337,
+	"timestamp": 1742589371651,
 	"viewport": {
 		"x": 90.59306101857669,
 		"y": 88.05182014345712,

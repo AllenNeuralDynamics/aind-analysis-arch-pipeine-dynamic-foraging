@@ -1,5 +1,10 @@
 {
 	"version": 1,
+	"results": [
+		{
+			"file_name": "2/upload.log"
+		}
+	],
 	"processes": [
 		"capsule_han_debug_aind_analysis_arch_job_manager_v_2_1",
 		"capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2"
