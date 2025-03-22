@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:a48e1229203a07257daa4a4b97c24930b95dc131aa3c4664a954b57b2584b0c2
+// hash:sha256:babb5ecb00c65cf83c14eadb2b35e82cae12814119457355859cc71f2c96885a
 
 nextflow.enable.dsl = 1
 
@@ -12,7 +12,7 @@ capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2_to_capsu
 // capsule - han_prod_aind-analysis-arch-job-manager
 process capsule_han_debug_aind_analysis_arch_job_manager_v_2_1 {
 	tag 'capsule-1554778'
-	container "$REGISTRY_HOST/published/da058235-42bc-42f9-81e9-ed4e965f660d:v3"
+	container "$REGISTRY_HOST/published/da058235-42bc-42f9-81e9-ed4e965f660d:v4"
 
 	cpus 1
 	memory '8 GB'
@@ -38,7 +38,7 @@ process capsule_han_debug_aind_analysis_arch_job_manager_v_2_1 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v3.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1554778.git" capsule-repo
+	git clone --branch v4.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1554778.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -54,7 +54,7 @@ process capsule_han_debug_aind_analysis_arch_job_manager_v_2_1 {
 // capsule - han_debug_aind-analysis-arch-job-wrapper-dynamic-foraging
 process capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2 {
 	tag 'capsule-7098858'
-	container "$REGISTRY_HOST/published/8385aa1a-d8da-4870-b952-e33733990f23:v3"
+	container "$REGISTRY_HOST/published/8385aa1a-d8da-4870-b952-e33733990f23:v4"
 
 	cpus 1
 	memory '8 GB'
@@ -84,7 +84,7 @@ process capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2 
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v3.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7098858.git" capsule-repo
+	git clone --branch v4.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7098858.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -100,7 +100,7 @@ process capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2 
 // capsule - han_debug_aind-analysis-arch-upload-db-s3
 process capsule_han_debug_aind_analysis_arch_upload_db_s_3_v_2_3 {
 	tag 'capsule-9391875'
-	container "$REGISTRY_HOST/published/d1004134-9823-4e3a-bba7-2b22ac32e42c:v1"
+	container "$REGISTRY_HOST/published/d1004134-9823-4e3a-bba7-2b22ac32e42c:v2"
 
 	cpus 1
 	memory '8 GB'
@@ -129,7 +129,7 @@ process capsule_han_debug_aind_analysis_arch_upload_db_s_3_v_2_3 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9391875.git" capsule-repo
+	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9391875.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 

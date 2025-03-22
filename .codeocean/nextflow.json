@@ -7,7 +7,7 @@
 				"id": "da058235-42bc-42f9-81e9-ed4e965f660d",
 				"name": "han_prod_aind-analysis-arch-job-manager",
 				"slug": "1554778",
-				"version": 3,
+				"version": 4,
 				"app_panel": true
 			},
 			"resources": {
@@ -32,7 +32,7 @@
 				"id": "8385aa1a-d8da-4870-b952-e33733990f23",
 				"name": "han_debug_aind-analysis-arch-job-wrapper-dynamic-foraging",
 				"slug": "7098858",
-				"version": 3,
+				"version": 4,
 				"app_panel": true
 			},
 			"resources": {
@@ -60,7 +60,7 @@
 				"id": "d1004134-9823-4e3a-bba7-2b22ac32e42c",
 				"name": "han_debug_aind-analysis-arch-upload-db-s3",
 				"slug": "9391875",
-				"version": 1
+				"version": 2
 			},
 			"resources": {
 				"cpus": 1,
