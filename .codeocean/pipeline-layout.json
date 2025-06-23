@@ -31,8 +31,8 @@
 		{
 			"id": "results",
 			"position": {
-				"x": 470.6415202466345,
-				"y": 964.839613260659
+				"x": 462.647248113046,
+				"y": 987.6803907851976
 			},
 			"selected": false,
 			"type": "results"
@@ -52,41 +52,41 @@
 			},
 			"id": "capsule_han_debug_aind_analysis_arch_upload_db_s_3_v_2_3",
 			"position": {
-				"x": 661.1619648072029,
-				"y": 768.2476136974057
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "da058235-42bc-42f9-81e9-ed4e965f660d"
-			},
-			"id": "capsule_han_debug_aind_analysis_arch_job_manager_v_2_1",
-			"position": {
-				"x": 552.4600656543497,
-				"y": 217.3653062939921
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "8385aa1a-d8da-4870-b952-e33733990f23"
-			},
-			"id": "capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2",
-			"position": {
-				"x": 552.3374388971483,
-				"y": 491.2305232554104
+				"x": 729.3977171642073,
+				"y": 767.3410782948329
 			},
 			"selected": true,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "ee18ab31-9a75-4a2a-9647-5a89b5ea24d4"
+			},
+			"id": "capsule_han_debug_aind_analysis_arch_job_manager_v_2_1",
+			"position": {
+				"x": 554.5364375270786,
+				"y": 221.51805003944992
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "451da157-6f12-4d8e-970f-75a836b046fc"
+			},
+			"id": "capsule_han_debug_aind_analysis_arch_job_wrapper_dynamic_foraging_v_2_2",
+			"position": {
+				"x": 490.97614479546223,
+				"y": 523.112085050894
+			},
+			"selected": false,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1742590448837,
+	"timestamp": 1750272541791,
 	"viewport": {
-		"x": 90.59306101857669,
-		"y": 88.05182014345712,
-		"zoom": 0.6637453629278863
+		"x": -60.35544049251598,
+		"y": 65.58849445369447,
+		"zoom": 0.8756269342632219
 	}
 }
