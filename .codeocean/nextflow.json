@@ -7,8 +7,8 @@
 				"id": "ee18ab31-9a75-4a2a-9647-5a89b5ea24d4",
 				"name": "han_prod_aind-analysis-arch-job-manager",
 				"slug": "7174758",
-				"commit": "e076cb1295997eea06200d3bcd6ba0ab79af1184",
-				"image_tag": "1687b4605135d5bf46bf7dc0361de9c7",
+				"commit": "f58df8bfc5c45093900a3165226fd13e147690c3",
+				"image_tag": "c518114da78e633cd28b0a99f1a04398",
 				"app_panel": true
 			},
 			"resources": {
@@ -33,13 +33,13 @@
 				"id": "451da157-6f12-4d8e-970f-75a836b046fc",
 				"name": "han_debug_aind-analysis-arch-job-wrapper-dynamic-foraging",
 				"slug": "7135734",
-				"commit": "11a22d42582c6a2515f03e97ac9536998c484112",
-				"image_tag": "bdb7cef86a6f7487cec0660d37592622",
+				"commit": "a6ca0272a9993100cbd2e7aca9795bbb45395e25",
+				"image_tag": "9c696e0eab1affdc9f3d42125edb6279",
 				"app_panel": true
 			},
 			"resources": {
-				"cpus": 16,
-				"memory": 128
+				"cpus": 2,
+				"memory": 16
 			},
 			"inputs": [
 				{
@@ -59,10 +59,11 @@
 		{
 			"name": "capsule_han_debug_aind_analysis_arch_upload_db_s_3_v_2_3",
 			"capsule": {
-				"id": "d1004134-9823-4e3a-bba7-2b22ac32e42c",
+				"id": "25a3c40a-7947-402d-899b-0cc2c8f88f6c",
 				"name": "han_debug_aind-analysis-arch-upload-db-s3",
-				"slug": "9391875",
-				"version": 2
+				"slug": "6611699",
+				"commit": "2563ac8776ab2c4c73fbf3f9afebc2a3445f3731",
+				"image_tag": "cde317e728dcd01a472d8e3bea6488d6"
 			},
 			"resources": {
 				"cpus": 1,
